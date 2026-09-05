@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nexus-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nexus-frontend
+  template:
+    metadata:
+      labels:
+        app: nexus-frontend
+    spec:
+      containers:
+        - name: nexus-frontend
+          image: mohamedashfaq/nexus-frontend:latest
+          ports:
+            - containerPort: 80

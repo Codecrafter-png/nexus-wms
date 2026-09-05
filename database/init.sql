@@ -3,7 +3,7 @@ CREATE TABLE IF NOT EXISTS products (
   name VARCHAR(100) NOT NULL,
   sku VARCHAR(50) UNIQUE NOT NULL,
   quantity INTEGER DEFAULT 0,
-  location VARCHAR(50),
+  location VARCHAR(50), 
   created_at TIMESTAMP DEFAULT NOW()
 );
 
