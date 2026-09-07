@@ -25,7 +25,7 @@ pipeline {
         stage('Push to Docker Hub') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'dockerhub-creds', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-                    bat "echo %PASSWORD% | docker login -u %USERNAME% --password-stdin"
+                    bat "docker login -u %USERNAME% -p %PASSWORD%"
                     bat "docker push %DOCKER_HUB_USER%/nexus-db:%IMAGE_TAG%"
                     bat "docker push %DOCKER_HUB_USER%/nexus-backend:%IMAGE_TAG%"
                     bat "docker push %DOCKER_HUB_USER%/nexus-frontend:%IMAGE_TAG%"
