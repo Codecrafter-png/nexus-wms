@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: nexus-backend
-          image: mohamedashfaq/nexus-backend:latest
+          image: mohamedashfaq/nexus-backend:v13
           ports:
             - containerPort: 5000
           env:

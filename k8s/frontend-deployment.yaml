@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: nexus-frontend
-          image: mohamedashfaq/nexus-frontend:latest
+          image: mohamedashfaq/nexus-frontend:v13
           ports:
             - containerPort: 80

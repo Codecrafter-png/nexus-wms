@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: nexus-db
-          image: mohamedashfaq/nexus-db:latest
+          image: mohamedashfaq/nexus-db:v13
           ports:
             - containerPort: 5432
           env:
