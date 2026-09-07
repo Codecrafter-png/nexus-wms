@@ -14,6 +14,14 @@ pipeline {
             }
         }
 
+        stage('Docker Login') {
+            steps {
+                withCredentials([usernamePassword(credentialsId: 'dockerhub-creds', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                    bat "docker login -u %USERNAME% -p %PASSWORD%"
+                }
+            }
+        }
+
         stage('Build Images') {
             steps {
                 bat "docker build -t %DOCKER_HUB_USER%/nexus-db:%IMAGE_TAG% ./database"
